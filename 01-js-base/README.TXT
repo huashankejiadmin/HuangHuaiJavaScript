@@ -29,6 +29,9 @@ JavaScript
 4，写JS代码，以web前端，和webapp为主，那么我们的JS代码也是运行在浏览器端。
 
 
+let a = 110;
+const PI = 3.14;
+
 
 
 

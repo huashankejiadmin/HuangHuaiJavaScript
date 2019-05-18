@@ -1,0 +1,70 @@
+<script>
+    // 软件，从宏观上来说，都是用来存储和处理数据   数据 
+    // 数据需要保存：内存  硬盘  
+    // 进程是操作系统分配和调度资源（内存，CPU）的基本单位 
+    // 数据：性名   身份证号   手机号 ... 
+    // 文章：一堆文字
+    // 我要把一个数据 "wangcai" 放到内存里，谁是给分配内存
+    // 答：
+
+    // let name = "wangcai"
+    // console.log(name)
+
+    // 数据类型，基本上所有的编程语言都是数据类型的概念。
+    // 数据类型的目地就是研究，给什么样的数据，分配合适空间
+    // 分配合适的空间目的：避免内存空间的浪费。
+
+    //  int a = 110;
+
+    // 在JS中有如下的数据类型：
+    // 基本数据类型：五个   Nubmer   String   Boolean  Undefined  Null
+    // 引用数据类型：Object
+
+    // 在之前，普通认为JS不是一门面向对象的编程语言，JAVA是一门面向对象的编程语言。
+    // JAVA也纯面向对象：i    "hello"   ture    false   ... 静态
+    // 在JS中一切都是对象：123   "hello"   Null
+
+    // JS是一门真正的面向对象的编程语言（只不过JS中的对象比较特别而已）
+    // JS中核心是函数
+
+    // 基本数据类型：Nubmer   String   Boolean  Undefined  Null
+
+    // Nubmer  余额  年龄  价格  ....
+    // let num1 = 123;  // JS中会根据=后面的值，自动的推断类型   num1的类型是number
+    // console.log(typeof num1)
+
+    // String  字符串  在JS中，通过双引号或单引号引起来的，叫字符串
+    // 姓名    性别   文字 ....
+    // let str = "xiaoqiang"   
+    // console.log(typeof str)
+
+    // Boolean  布尔   true  false
+    // 同意 
+    // var b = true;
+    // console.log(b);
+    // console.log(typeof b)
+
+    // Undefined是一种数据类型，这种数据类型对应的值只有一个，是undefined
+    // var a;
+    // console.log(a)
+    // console.log(typeof a)
+
+    // 引用数据类型   对象
+    // class Person{}
+    // 在JS中，一个{}就是一个对象
+    let dog = {
+        name:"wangcai",
+        age:10,
+        run:function(){
+            console.log("run...")
+        }
+    }
+    // 总结：在JS中数据类型的分类，分两类
+    // 基本数据类型：Stirng Numer Boolean Undefiend Null
+    // 引用数据类型: Object
+
+    // 在JS中，不管你是基本数据类型，还是引用数据类型，它们都是对象
+    // JS是一门面向对象的编程语言
+
+    // 今天和明天   下周六和周日    就可以使用JS来写东西
+</script>
