@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- js代码onclick="alert('登录成功')"  可以写在开始标签中，用的比较少 -->
+    <button onclick="alert('登录成功')">登录</button>
+<script>
+    // JS代码都是写在script标签中，浏览器它会运行html文件，当发现有一个script标签后
+    // 浏览器就会去解析JS代码，并执行，最后我们的代码还是让浏览器去执行
+    // C ---> 编译器   JS ---> 解析器
+    // 编译--->编译只需要编译一次，生成一个exe文件，以后只需要去运行exe文件，一次编译，到处运行，编译性语言效率比较高
+    // 解释--->每次运行，都需要去解释一次，性能没有编译性的语言的性能高
+    // 编译性语言：c,c++   游戏服务器开发
+    // 解释性语言：js,php,python
+
+    // 任何一门编程语言，都是有变量，数据类型，函数，字符串，数组....这些组成。
+    // 如果你有C语言基础，那么学习JS so easy~ 
+
+    // 小历史：
+    // 大神：linux  c   7天时间创造了JS编程   导致JS语法比较灵活    核心是函数式编程  在JS中，函数是最重要的。
+
+    // C   int a = 110; float f = 3.14; char c = 'c';  int[] arr = [1,2,3];
+    // js  var a = 110  var f = 3.14  var c = 'c'  var arr = [1,2,3,"hello"]
+
+    // JS有三个部分组成的：ECMAScript(ES,ES5,ES6,ES7,ES8)，BOM，DOM
+    // 我们现在只能先去学习ES，ES中包括了JS的基本语法
+    // BOM和DOM操作基本都out，
+    // 频繁的操作DOM，导致性能比较低，现在又有大神提出虚拟DOM---->Vue  React
+    // 在公司中，做项目，基本上不会去操作DOM，主要以虚拟DOM为主，也就是以Vue技术栈和React技术栈为主
+
+    // 写JS可以在三个地方写：标签里，script标签中，js文件。
+    // var a = 110; // 定义一个变量 变量名是a，变量值是110
+    // alert(a)  // alert表示弹出一个警告框
+</script>
+<!-- 如果外面写了一个js文件，那么你需要通过script标签来引入 -->
+<script src="./out.js"></script>
+</body>
+</html>
