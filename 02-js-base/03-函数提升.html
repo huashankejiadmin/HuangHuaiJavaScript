@@ -1,0 +1,33 @@
+<script>
+    // 使用function声明的函数，也会提升
+    // f()
+    // function f(){
+    //     console.log("f...")
+    // }
+
+    // 函数表达式   var a = 110;   在js中函数是也是值，我们可以把一个函数赋给一个变量
+    // var g = function(){
+    //     console.log("g...")
+    // }
+    // g()
+
+    // 函数表达式之前调用函数，可以吗？答：不可以
+    // 原因：var g会提升  本质是变量   它提升到最前面时  var g   然后g()
+    // g is not a function
+    // g()
+    // var g = function(){
+    //     console.log("g...")
+    // }
+
+
+    console.log(a)  // undefined
+    console.log(b)  //  undefined
+    if(true){
+        var a = 1;
+    }else{
+        var b = 2;
+    }
+    console.log(a)  // 1
+    console.log(b)  // undefined
+    
+</script>
