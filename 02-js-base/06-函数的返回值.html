@@ -1,0 +1,78 @@
+<script>
+    
+    // function f(){
+    //     return 123;
+    // }
+    // console.log(f())
+
+    // 在JS中，如果一个函数没有指定返回值，那么这个函数返回undefined
+    // function f(){
+    //     // 其实如果函数没有返回值，会在函数体的最后面加一行return undefined;这行可写可不写
+    //     return undefined;
+    // }
+    // console.log(f())
+
+    // 函数能返回多个值？
+
+    // 定义一个函数，功能是计算两个数中的最大值
+    // function f(m,n){   // m,n是形参
+    //     // if(m>n){
+    //     //     return m;
+    //     // }else{
+    //     //     return n;
+    //     // }
+    //     // 三元运算符   三目运算    指操作数的个数
+    //     // 1+2;   +  是二元运算符   +两边有两个操作数
+    //     // i++    ++ 是一元运算符   ++左侧只有一个操作数
+    //     // ？：   三运算运算符  三个操作数
+    //     var max = m>n ? m : n;
+    //     return max;
+    // }
+    // // f(1,2) // 1,2实参
+    // console.log(f(1,2))
+
+    // 声明一个函数，这个函数的功能是求两个数的最小值
+    // function f(m,n){
+    //     var min = m<n ? m:n;
+    //     return min;
+    // }
+    // console.log(f(1,5))
+
+    // 声明一个函数，这个函数的功能是求两个数的平均值
+    // function f(m,n){
+    //     var avg = (m+n)/2;
+    //     return avg;
+    // }
+    // console.log(f(2,6))
+
+    // 声明一个函数，这个函数的功能是求两个数的最大值，最小值，平均值
+    // function f(m,n){
+    //     var max = m>n ? m:n;
+    //     var min = m<n ? m:n;
+    //     var avg = (m+n)/2;
+    //     // return 语句只能返回一个值，不能返回多值
+    //     return max,avg,min;
+    // }
+    // console.log(f(1,9))
+
+    // function f(m,n){
+    //     var max = m>n ? m:n;
+    //     // 在一个函数中遇到了reutrn语句，return语句后面的代码都不会执行
+    //     return max;
+    //     var min = m<n ? m:n;
+    //     return min;
+    //     var avg = (m+n)/2;
+    //     return avg;
+    // }
+    // console.log(f(1,9))
+
+    // 如何解决上面的问题？
+    // function f(m,n){
+    //     var max = m>n ? m:n;
+    //     var min = m<n ? m:n;
+    //     var avg = (m+n)/2;
+    //     // return只能返回一值，如果你要返回多值，请你把多个值放到一个容器（数组，对象）
+    //     return [max,min,avg];
+    // }
+    // console.log(f(1,9))
+</script>

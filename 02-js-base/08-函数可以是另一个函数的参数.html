@@ -1,0 +1,67 @@
+<script>
+// 在JS中，函数的地位是最高，函数是一等公民，函数式编程，面向对象式编程，
+// 不同的语言，有不同的编程规范，也叫范式，函数式编程，是一种范式，面向对象式编程也是一种范式
+
+// JS中函数式编程，JAVA，PHP，C++都是属性面向对象式编程
+
+// 有的语言中，不仅仅支持函数式编程，它也支持向对象式编程，这样的编程语言，叫多范式
+// 在大数据处理框架，有一门类似于JAVA语言，叫Scala，就是多范式编程语言
+
+// 函数式编程比较灵活，也比较简单
+// 面向对象式编程语法比较多，学成成本大
+
+// 在函数式编程中，你可以把一个函数当作另一个函数的参数
+
+// 我们之前也见过，setTimeout()这个函数是已经封装好的，我们直接使用，如下：
+// 我们把function(){}作为了setTimeout()这个函数的参数
+// setTimeout()  这个函数有两个参数，一个是函数，一个是时间
+// 如果一个函数当作了另一个函数的参数，那么我们就这个函数为回调函数
+// 在函数式编程中，函数有用法主要两类：
+// 普通函数的使用
+// 高阶函数：回调函数，偏函数，函数柯里化，函数的共振....
+// setTimeout(function(){
+//     console.log("f...")
+// },5000)
+
+// 计算两个数的和
+// function add(x,y){
+//     return x+y;
+// }
+// 计算两个数的差
+// function sub(x,y){
+//     return x-y;
+// }
+// 你要封装一个函数，这个函数的功能是计算两个数的和或差
+// compute这个函数有三个参数：
+//   第一个参数是一个回调函数
+//   第二个和第三个参数是形参
+// function compute(f,a,b){
+//     return f(a,b)
+// }
+// console.log(compute(add,1,2))
+// console.log(compute(sub,1,2))
+
+// 函数表达式
+// var add = function(x,y){
+//     return x+y;
+// }
+// var sub = function(x,y){
+//     return x-y;
+// }
+// function compute(f,a,b){
+//     return f(a,b)
+// }
+// console.log(compute(add,1,2))
+// console.log(compute(sub,1,2))
+
+function compute(f,a,b){
+    return f(a,b)
+}
+// 以后，使用这种形式多一点
+compute(function(x,y){
+    return x+y;
+},1,2)
+setTimeout(function(){
+
+},1000)
+</script>
