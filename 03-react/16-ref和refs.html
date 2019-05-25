@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 id="box">这是一个h1标签</h1>
+    </div>
+    <!-- <script>
+            var h1 = document.getElementById("box")
+            alert(h1)  
+    </script> -->
+
+    <script type="text/babel">
+        var Hi = React.createClass({
+            f(){
+                alert(this.refs.baidu)
+            },
+            render(){
+                return (
+                    <div>
+                        <a href="" ref="baidu">百度一下</a>
+                        <button onClick={this.f}>获取a</button>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Hi></Hi>,document.getElementById("app"))
+    </script>
+</body>
+</html>

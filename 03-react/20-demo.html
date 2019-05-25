@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/comment.css">
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+    <!-- 
+        使用react写一个页面的步骤：
+            1，分析功能   xx  xx  xx 
+            2，划分组件  最最重要的基本功
+            3，确定组件中的状态   状态都交给App组件来管理  
+     -->
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        // 先写CommentItem组件
+        var CommentItem = React.createClass({
+            render(){
+                return (
+                    <div className="comment">
+                        <div className="comment-box">
+                            <div className="comment-user">
+                                <span>{this.props.comment.username}</span>
+                            </div>
+                            <p>{this.props.comment.content}</p>
+                        </div>
+                        <div className="btn">
+                            <span>{this.props.comment.ctime}</span>
+                            <a href="#">删除</a>
+                        </div>
+                    </div>
+                )
+            }
+        })
+        // 定义留言列表组件
+        var CommentList = React.createClass({
+            render(){
+                return(
+                    <div>
+                        {this.props.comments.map((comment,index)=>
+                            <CommentItem comment={comment} key={index}/>
+                        )}
+                    </div>
+                )
+            }
+        })
+        // 定义添加留言的组件
+        var FormBox = React.createClass({
+            render(){
+                return(
+                    <div className="comment-input">
+                        <div className="comment-field">
+                            <span className="comment-field-name">用户名：</span>
+                            <div className="comment-field-input">
+                                <input type="text" value="xiaoqiang" />
+                            </div>
+                        </div>
+                        <div className="comment-field">
+                            <span className="comment-field-name">评论内容：</span>
+                            <div className="comment-field-input">
+                                <textarea></textarea>
+                            </div>
+                        </div>
+                        <div className="comment-field-button">
+                            <button>发布</button>
+                        </div>
+                    </div>
+                )
+            }
+        })
+
+        // 定义App组件
+        var App = React.createClass({
+            getInitialState(){
+                return{
+                    comments:[
+                        {username:"zhangsan2",content:"66666666666666666666666666",ctime:"2019-09-09"},
+                        {username:"lisi2",content:"88888888888888888888888888",ctime:"2019-09-09"},
+                        {username:"wangwu2",content:"9999999999999999999999",ctime:"2019-09-09"},
+                    ]
+                }
+            },
+            render(){
+                return(
+                    <div className="wrapper">
+                        <FormBox/>
+                        <CommentList comments={this.state.comments}/>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<App/>,document.getElementById("app"))
+    </script>
+</body>
+</html>

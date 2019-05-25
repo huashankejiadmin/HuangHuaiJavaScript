@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        var Hi = React.createClass({
+            getInitialState(){
+                return{
+                    username:""
+                }
+            },
+            // 事件对象   事件对象就是保存了事件发生的一堆信息
+            f1(e){
+                this.setState({
+                    username:e.target.value
+                })
+            },
+            render(){
+                return (
+                    <div>
+                        用户名：<input value={this.state.username} onChange={this.f1}/>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Hi></Hi>,document.getElementById("app"))
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

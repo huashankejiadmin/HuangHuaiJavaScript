@@ -87,7 +87,19 @@ React版HelloWorld案例流程：
 在一个组件中，不只有html，还有数据，数据在vue和react中，都叫状态。也就是说
 一个组件中，是有很多的状态。state。
 
+refs主要作用是用来获取一个标签，步骤：
+    第一步：给一个标签起上一个别名，ref="xxx"
+    第二步：通过this.refs.xxx 来获取这个标签  
 
+表单：
+    <form>
+        <input></input>
+        <select><option></option></select>
+        <textarea></textarea>
+    </form>
 
+在Reac中表单分受控的和非受控。  
 
+案例练习：
+    第一步：
 
