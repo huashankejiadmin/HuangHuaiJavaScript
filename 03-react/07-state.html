@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        var Hi = React.createClass({
+            // getInitialState 是一个钩子  必须要返回一个对象，在这个对象中定义数据
+            // 状态 ---> 数据      状态
+            // 钩子与钩子之间要加上逗号
+            getInitialState(){
+                return{
+                    name:"wangcai",
+                    age:"100"
+                }
+            },
+            // f1是我们自己写的方法，不是钩子
+            f1(){
+                // alert("hello")
+                // 改变状变，设置状态
+                this.setState({
+                    age:1000
+                })
+            },
+            render(){
+                return (
+                    <div>
+                        <h2>{this.state.name}</h2>
+                        <h2>{this.state.age}</h2>
+                        <button onClick={this.f1}>把100变成1000</button>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Hi></Hi>,document.getElementById("app"))
+    </script>
+</body>
+</html>

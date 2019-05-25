@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        var Son = React.createClass({
+            render(){
+                return (
+                    <div>
+                    {this.props.name}
+                    {this.props.age}
+                    </div>
+                )
+            }
+        })
+        var Father = React.createClass({
+            render(){
+                return (
+                    <div>
+                        <Son name="wangcai" age="1100"/>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Father></Father>,document.getElementById("app"))
+    </script>
+</body>
+</html>

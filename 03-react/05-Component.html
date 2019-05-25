@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+<!-- 
+    组件： 把一堆的标签，堆成我们自己想要的标签。组件
+          定义时，比较麻烦，使用时，非常爽。
+
+    好处：写项目，就像堆积木
+         复用
+
+    vue,react,ng:面向组件开发
+
+    定义一个组件：React.createClass()
+        当我们创建一个一个组件，那么这个组件中几个方法，我们叫它生命周期方法，是react自己调用，不需要我
+        手动去调它，这些方法，也叫钩子。其中render就是一个钩子函数。
+
+    渲染组件
+        ReactDOM.render(<Hi></Hi>,document.getElementById("app"))
+        
+    使用组件：<Hi></Hi>
+ -->
+    <script type="text/babel">
+        var Hi = React.createClass({
+            render(){
+                return (
+                    <div>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Hi></Hi>,document.getElementById("app"))
+    </script>
+</body>
+</html>

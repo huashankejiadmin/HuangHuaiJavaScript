@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        var Father = React.createClass({
+            render(){
+                return (
+                    <div>
+                        {this.props.children}
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Father>这里面写东西显示吗？</Father>,document.getElementById("app"))
+    </script>
+</body>
+</html>

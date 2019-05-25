@@ -77,7 +77,15 @@ React版HelloWorld案例流程：
     3，渲染组件到指定的地方
         ReactDOM.render(<Hello/>,document.getElementById("app"))
 
-JSX：JS+HTML
+在JSX中，如果你想要给标签添加属性，有一个属性比较特殊，是class属性。
+    class--->className   class这是js中的一个关键
+    for--->htmlFor    for是js中的关键
+
+在JSX中，要给标签添加行内样式，如下：
+    <h1 id="abc" className="item" style={{color:"red",background:"skyblue"}}>这是一个Hi组件</h1>
+
+在一个组件中，不只有html，还有数据，数据在vue和react中，都叫状态。也就是说
+一个组件中，是有很多的状态。state。
 
 
 
