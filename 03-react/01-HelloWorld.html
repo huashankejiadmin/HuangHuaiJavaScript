@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入react相关的库 -->
+    <!-- 引入react核心文件 -->
+    <script src="./lib/react.js"></script>
+    <!-- 引入react.dom.js文件 dom虚拟操作 -->
+    <script src="./lib/react-dom.js"></script>
+    <!-- 引用brower.min.js文件 让浏览器可以认识jsx -->
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body>
+    <!-- div是一个容器，我们要把Hello组件渲染到这个div中 -->
+    <div id="app">
+
+    </div>
+    <!-- 写一个HelloWorld组件，写react，vue，都是在写组件 -->
+    <!-- 当你引用了react.js文件，那么你就有了React对象 -->
+    <!-- Hello就是通过React.createClass()创建的一个组件 -->
+    <!-- createClass传递一个对象 {} 就是一个对象 -->
+    <!-- {} 放键值对  render(){}是一个方法 -->
+    <script type="text/babel">
+        var Hello = React.createClass({
+            render(){
+                return(
+                    <div>
+                        <h1>Hello World~组件</h1>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Hello/>,document.getElementById("app"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        var Hello = React.createClass({
+            render(){
+                var name = "wangcai"
+                var dog = {name:'xiaoqiang',age:100}
+                var m = <p>这是一个p标签</p>
+                var res;
+                var flag = true;
+                if(flag){
+                    res = "<h1>True</h1>"
+                }else{
+                    res = "<h1>Flase</h1>"
+                }
+                var books = ["java","vue","react","js","NG"]
+                var newBooks = books.map(function (item) {
+                    return <li>{item}</li>
+                })
+
+                var names = ["zhangs","lisi","wangwu","zhaoliu"]
+                var newNames = names.map(item=><li>{item}</li>)
+                return(
+                    <div>
+                        <h1>轮播图组件</h1>
+                        <hr/>
+                        <ul>
+                            {newNames}
+                        </ul>
+                        <ul>
+                            {newBooks}
+                        </ul>
+                        <hr/>
+                        <h2>{name}</h2>
+                        <h2>{100}----{"hello"}</h2>
+                        <h2>{100+100}</h2>
+                        <h2>{dog.name}</h2>
+                        <h2>{dog.age}</h2>
+                        <h2>{Math.random()}</h2>
+                        <h2>{m}</h2>
+                        <h2>{res}</h2>
+                        <h2>{flag?"OK":"Bed"}</h2>
+                        <br />
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Hello/>,document.getElementById("app"));
+    </script>
+</body>
+</html>
+
+
+
+
+
+
