@@ -73,14 +73,22 @@ node是后端开发的，node可以做两件事：
 
 项目的步骤：
     第一步（只需要做一次）：你需要百度node,找到node的官网，下载node的安装包，安装，通过node -v检测node是否安装成功
-·   第二步（只需要做一次）：安装脚手架，npm i create-react-app -g       -g表示全局安装    安装完后，我们就可以使用脚手架来创建项目的基本结构
+        OK·   
+    第二步（只需要做一次）：安装脚手架，npm i create-react-app -g       -g表示全局安装    安装完后，我们就可以使用脚手架来创建项目的基本结构
+        成功  
     第三步：通过脚手架来创建项目，create-react-app　todomvc   项目创建完成后，那么你就得到一堆的文件和文件夹，就是我们项目的基本骨架。
+        
     第四步：进入到项目，启动项目   cd todomvc     npm start 
     第五步：把src下面的所有的文件，全部删除，从0开始
     第六步：创建入口文件index.js 和 App根组件
 
-分析通过脚手架创建的项目，第一个页面是，如何产生的？
+换下载源：
+    1,装一个nrm的包  cpm i nrm -g
+    2,查看都有哪些下载源  nrm ls
+    3,换源 nrm  use taobao
 
+作业：
+    使用todomvc，添加todo  删除todo
 
 
 
