@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/comment.css">
+    <title>Document</title>
+    <!-- 现在是这样用react，但是在做项目时，不用这么用 -->
+    <!-- 这里面引入，仅仅是为了学习入门而已，真实项目中，不会这么用 -->
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser-5.8.38.min.js"></script>
+</head>
+<body style="background-color: skyblue;">
+    <h1 style="text-align: center; color:red;">评论列表</h1>
+    <div id="app"></div>
+
+    <!-- 
+        现在我们把所有的组件，都写在的一个文件中，真实项目，不是这样的，
+        以后我们做项目时，不会这用。还是为了入门简单
+     -->
+    <script type="text/babel">
+        // 现在这种定义组件的方式，已经被废弃了，以后，我们不会这么
+        var CommentItem = React.createClass({
+            removeComment(){
+                var res = confirm("你确定删除留言吗？")
+                if(res){
+                    // 确定
+                    this.props.removeComment(this.props.comment)
+                }
+            },
+            render(){
+                return(
+                    <div className="comment">
+                        <div className="comment-box">
+                            <div className="comment-user">
+                                <span>{this.props.comment.username}</span>
+                            </div>
+                            <p>{this.props.comment.content}</p>
+                        </div>
+                        <div className="btn">
+                            <span>{this.props.comment.ctime}</span>
+                            <button onClick={this.removeComment}>删除</button>
+                        </div>
+                    </div>
+                )
+            }
+        })
+        var CommentList = React.createClass({
+            render(){
+                return(
+                    <div>
+                        {this.props.comments.map((comment,index)=>
+                             <CommentItem comment={comment} removeComment={this.props.removeComment}/>
+                        )}
+                    </div>
+                )
+            }
+        })
+        var FormBox = React.createClass({
+            handleClick(){
+                var username = this.refs.username.value.trim();
+                var content = this.refs.content.value.trim();
+                if(username && content){
+                    this.props.addComment({
+                        username:username,
+                        content:content,
+                        ctime:+new Date()
+                    })
+                }else{
+                    alert("用户名和内容不能为空")
+                }
+            },
+            render(){
+                return(
+                    <div className="comment-input">
+                        <div className="comment-field">
+                            <span className="comment-field-name">用户名：</span>
+                            <div className="comment-field-input">
+                                <input type="text" ref="username"  />
+                            </div>
+                        </div>
+                        <div className="comment-field">
+                            <span className="comment-field-name">评论内容：</span>
+                            <div className="comment-field-input">
+                                <textarea ref="content"></textarea>
+                            </div>
+                        </div>
+                        <div className="comment-field-button">
+                            <button onClick={this.handleClick}>发布</button>
+                        </div>
+                    </div>
+                )
+            }
+        })
+        var App = React.createClass({
+            getInitialState(){
+                return{
+                    comments:[
+                        {username:"wangcai",content:"11111",ctime:"2019-09-09"},
+                        {username:"xiaoqiang",content:"22222",ctime:"2019-09-09"},
+                        {username:"zhangsan",content:"33333",ctime:"2019-09-09"},
+                        {username:"lisi",content:"44444",ctime:"2019-09-09"},
+                        {username:"wangwu",content:"55555",ctime:"2019-09-09"}
+                    ]
+                }
+            },
+            // 添加留言
+            addComment(comment){
+                this.state.comments.push(comment);
+                this.setState({
+                    comments:this.state.comments
+                })
+            },
+            // 删除留言
+            removeComment(comment){
+                // 找comment在comments中的位置   findIndex这个方法自己看一个js文档
+                var index = this.state.comments.findIndex(item=>item==comment)
+                // 根据index把某个留言给删除了
+                this.state.comments.splice(index,1)
+                this.setState({
+                    comments:this.state.comments
+                })
+
+            },
+            render(){
+                return(
+                    <div className="wrapper">
+                        <FormBox addComment={this.addComment}/>
+                        <CommentList comments={this.state.comments} removeComment={this.removeComment}/>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<App/>,document.getElementById("app"))
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
